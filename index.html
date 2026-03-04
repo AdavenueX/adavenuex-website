@@ -67,6 +67,7 @@ z-index:-1;
 
 .welcome{font-size:70px;}
 .hero h1{font-size:50px;}
+
 .btn{
 margin-top:20px;
 padding:12px 30px;
@@ -74,17 +75,6 @@ background:#00ffd5;
 color:black;
 border-radius:30px;
 text-decoration:none;
-}
-
-/* GLASS CARD */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border-radius:15px;
-padding:25px;
-margin:15px;
-display:inline-block;
-width:250px;
 }
 
 /* INFLUENCER */
@@ -110,10 +100,12 @@ transition:0.3s;
 transform:scale(1.1);
 }
 .influencer-card img{
-width:100%;height:100%;object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-/* 🔥 BRANDS SLIDER */
+/* 🔥 BRANDS */
 .brands{
 padding:80px 0;
 background:#000;
@@ -123,11 +115,12 @@ overflow:hidden;
 .slider{
 display:flex;
 gap:60px;
-animation:scroll 20s linear infinite;
+width:max-content;
+animation:scroll 25s linear infinite;
 }
 
 .slider img{
-width:120px;
+width:140px;
 filter:grayscale(100%);
 opacity:0.7;
 transition:0.3s;
@@ -135,7 +128,7 @@ transition:0.3s;
 .slider img:hover{
 filter:grayscale(0);
 opacity:1;
-transform:scale(1.1);
+transform:scale(1.2);
 }
 
 @keyframes scroll{
@@ -146,7 +139,7 @@ transform:scale(1.1);
 /* CONTACT */
 .contact{
 background:#08101f;
-padding:50px;
+padding:60px;
 text-align:center;
 }
 
@@ -158,6 +151,7 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
+font-size:20px;
 }
 
 /* FOOTER */
@@ -196,27 +190,25 @@ color:#aaa;
 <!-- INFLUENCER -->
 <section class="influencer-section">
 <div class="influencer-container">
-<div class="influencer-card"><img src="img1.jpg"></div>
-<div class="influencer-card"><img src="img2.jpg"></div>
-<div class="influencer-card"><img src="img3.jpg"></div>
-<div class="influencer-card"><img src="img4.jpg"></div>
-<div class="influencer-card"><img src="img5.jpg"></div>
-<div class="influencer-card"><img src="img6.jpg"></div>
+
+<img class="influencer-card" src="https://picsum.photos/200/300?1">
+<img class="influencer-card" src="https://picsum.photos/200/300?2">
+<img class="influencer-card" src="https://picsum.photos/200/300?3">
+<img class="influencer-card" src="https://picsum.photos/200/300?4">
+<img class="influencer-card" src="https://picsum.photos/200/300?5">
+<img class="influencer-card" src="https://picsum.photos/200/300?6">
+
 </div>
 </section>
 
-<!-- 🔥 BRANDS SLIDER -->
+<!-- 🔥 BRANDS -->
 <section class="brands">
 <div class="slider">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Flipkart_logo.png">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Boat_Logo.png">
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Puma_logo.svg">
-
-<!-- duplicate for loop -->
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Flipkart_logo.png">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Boat_Logo.png">
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Puma_logo.svg">
 
@@ -238,7 +230,11 @@ color:#aaa;
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 particlesJS("particles-js", {
-particles:{number:{value:80},size:{value:3},move:{speed:2}}
+particles:{
+number:{value:80},
+size:{value:3},
+move:{speed:2}
+}
 });
 </script>
 
