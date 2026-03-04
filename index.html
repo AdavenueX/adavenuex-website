@@ -19,27 +19,14 @@ color:white;
 overflow-x:hidden;
 }
 
-/* LOADER */
-#loader{
+/* PARTICLES BACKGROUND */
+#particles-js{
 position:fixed;
 width:100%;
 height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-.loader-circle{
-width:50px;
-height:50px;
-border:5px solid #00ffd5;
-border-top:5px solid transparent;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-@keyframes spin{
-100%{transform:rotate(360deg);}
+top:0;
+left:0;
+z-index:0;
 }
 
 /* NAVBAR */
@@ -49,7 +36,7 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 background:rgba(0,0,0,0.3);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(10px);
 position:sticky;
 top:0;
 z-index:10;
@@ -62,7 +49,9 @@ text-decoration:none;
 font-weight:500;
 transition:0.3s;
 }
-nav a:hover{color:#00ffd5;}
+nav a:hover{
+color:#00ffd5;
+}
 
 /* HERO */
 .hero{
@@ -72,6 +61,8 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
+z-index:2;
 }
 
 .welcome{
@@ -82,10 +73,11 @@ font-weight:700;
 .intro{
 color:#aaa;
 max-width:700px;
-margin-bottom:20px;
 }
 
-.hero h1{font-size:50px;}
+.hero h1{
+font-size:50px;
+}
 
 .btn{
 margin-top:20px;
@@ -97,13 +89,22 @@ text-decoration:none;
 font-weight:600;
 transition:0.3s;
 }
-.btn:hover{transform:scale(1.1);}
+.btn:hover{
+transform:scale(1.1);
+}
 
-/* GLASS CARD */
+/* SECTION */
+section{
+padding:80px 20px;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+/* GLASS EFFECT */
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
 padding:25px;
 margin:15px;
 border-radius:15px;
@@ -113,33 +114,15 @@ transition:0.3s;
 }
 .card:hover{
 transform:translateY(-10px);
-background:rgba(255,255,255,0.1);
 }
 
-/* INFLUENCER */
-.influencer-section{
-padding:100px 20px;
-background:linear-gradient(135deg,#120b1f,#1f0f3d);
-overflow:hidden;
-}
-
-.influencer-title{
-font-size:50px;
-font-weight:700;
-color:#ffd700;
-margin-bottom:50px;
-}
-
-/* AUTO SLIDER */
+/* INFLUENCER SLIDER */
 .influencer-container{
 display:flex;
 gap:20px;
-animation:slide 20s linear infinite;
-}
-
-@keyframes slide{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:10px;
 }
 
 .influencer-card{
@@ -148,7 +131,6 @@ height:320px;
 background:#000;
 border-radius:15px;
 overflow:hidden;
-position:relative;
 transition:0.4s;
 }
 
@@ -164,23 +146,17 @@ box-shadow:0 0 20px #ff00ff;
 }
 
 .brand-tag{
-position:absolute;
-bottom:0;
-width:100%;
 background:white;
 color:black;
 padding:5px;
-font-size:14px;
 font-weight:600;
 }
 
 /* CONTACT */
 .contact{
 background:#08101f;
-padding:50px;
 }
 
-/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -189,19 +165,34 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-text-decoration:none;
-font-size:20px;
-box-shadow:0 0 10px #25D366;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-color:#aaa;
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.loader-circle{
+width:50px;
+height:50px;
+border:5px solid #00ffd5;
+border-top:5px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0);}
+100%{transform:rotate(360deg);}
 }
 </style>
-
 </head>
 
 <body>
@@ -210,6 +201,9 @@ color:#aaa;
 <div id="loader">
 <div class="loader-circle"></div>
 </div>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
 
 <header>
 <h2>AdAvenueX</h2>
@@ -221,30 +215,18 @@ color:#aaa;
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="home" data-aos="fade-up">
-
 <div class="welcome">Welcome 👋</div>
-
-<p class="intro">
-Welcome to AdAvenueX — where brands grow faster with powerful influencer marketing strategies and creators land premium deals.
-</p>
-
+<p class="intro">Welcome to AdAvenueX — where brands grow faster.</p>
 <h1>Scale Your Brand 🚀</h1>
-<p>We help brands grow with powerful influencers & help creators land high-paying deals.</p>
-
 <a href="https://wa.me/916387688790" class="btn">Get Started</a>
-
 </section>
 
-<!-- INFLUENCER -->
 <section class="influencer-section">
+<h2 class="influencer-title">INFLUENCER MARKETING</h2>
 
-<h2 class="influencer-title" data-aos="zoom-in">INFLUENCER MARKETING</h2>
+<div class="influencer-container" id="slider">
 
-<div class="influencer-container">
-
-<!-- ORIGINAL + DUPLICATE FOR LOOP -->
 <div class="influencer-card"><img src="img1.jpg"><div class="brand-tag">Upstox</div></div>
 <div class="influencer-card"><img src="img2.jpg"><div class="brand-tag">Mamaearth</div></div>
 <div class="influencer-card"><img src="img3.jpg"><div class="brand-tag">MX TakaTak</div></div>
@@ -252,78 +234,56 @@ Welcome to AdAvenueX — where brands grow faster with powerful influencer marke
 <div class="influencer-card"><img src="img5.jpg"><div class="brand-tag">Limelight</div></div>
 <div class="influencer-card"><img src="img6.jpg"><div class="brand-tag">Touch925</div></div>
 
-<!-- duplicate -->
-<div class="influencer-card"><img src="img1.jpg"></div>
-<div class="influencer-card"><img src="img2.jpg"></div>
-<div class="influencer-card"><img src="img3.jpg"></div>
-
 </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" data-aos="fade-up">
 <h2>About AdAvenueX</h2>
 
-<div class="card">
-<h3>👤 Manager</h3>
-<p>Mohit</p>
-</div>
-
-<div class="card">
-<h3>📈 Mission</h3>
-<p>Connect brands with top creators</p>
-</div>
-
-<div class="card">
-<h3>🔥 Vision</h3>
-<p>Build India's top influencer network</p>
-</div>
+<div class="card"><h3>👤 Manager</h3><p>Mohit</p></div>
+<div class="card"><h3>📈 Mission</h3><p>Connect brands</p></div>
+<div class="card"><h3>🔥 Vision</h3><p>Top network</p></div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" data-aos="fade-up">
 <h2>Our Services</h2>
 
-<div class="card">
-<h3>Brand Promotion</h3>
-<p>Grow your brand with influencers</p>
-</div>
-
-<div class="card">
-<h3>Creator Deals</h3>
-<p>Get high-paying collaborations</p>
-</div>
-
-<div class="card">
-<h3>Campaign Strategy</h3>
-<p>ROI focused marketing plans</p>
-</div>
-
+<div class="card"><h3>Brand Promotion</h3></div>
+<div class="card"><h3>Creator Deals</h3></div>
+<div class="card"><h3>Campaign Strategy</h3></div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact" data-aos="zoom-in">
-<h2>Contact Us</h2>
-<p>📞 +91 6387688790</p>
-<p>📸 Instagram: @adavenuex</p>
-<a href="https://wa.me/916387688790" class="btn">Chat on WhatsApp</a>
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<a href="https://wa.me/916387688790" class="btn">WhatsApp</a>
 </section>
 
 <a href="https://wa.me/916387688790" class="whatsapp">💬</a>
 
-<footer>
-© 2026 AdAvenueX | All Rights Reserved
-</footer>
+<footer>© 2026 AdAvenueX</footer>
 
 <!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script>
 AOS.init();
 
-/* LOADER REMOVE */
-window.addEventListener("load",()=>{
-document.getElementById("loader").style.display="none";
+// loader
+window.onload = () => {
+document.getElementById("loader").style.display = "none";
+};
+
+// particles
+particlesJS("particles-js", {
+particles:{number:{value:80},size:{value:3},move:{speed:2}}
 });
+
+// auto slider
+let slider = document.getElementById("slider");
+setInterval(()=>{
+slider.scrollLeft += 200;
+},2000);
 </script>
 
 </body>
