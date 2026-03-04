@@ -7,8 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body{
@@ -16,17 +16,6 @@ margin:0;
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b0f1a,#0f1f3d);
 color:white;
-overflow-x:hidden;
-}
-
-/* PARTICLES BACKGROUND */
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:0;
 }
 
 /* NAVBAR */
@@ -39,7 +28,6 @@ background:rgba(0,0,0,0.3);
 backdrop-filter:blur(10px);
 position:sticky;
 top:0;
-z-index:10;
 }
 
 nav a{
@@ -61,18 +49,11 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-position:relative;
-z-index:2;
 }
 
 .welcome{
 font-size:70px;
 font-weight:700;
-}
-
-.intro{
-color:#aaa;
-max-width:700px;
 }
 
 .hero h1{
@@ -97,41 +78,45 @@ transform:scale(1.1);
 section{
 padding:80px 20px;
 text-align:center;
-position:relative;
-z-index:2;
 }
 
-/* GLASS EFFECT */
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
 padding:25px;
 margin:15px;
 border-radius:15px;
 display:inline-block;
-width:250px;
+width:280px;
 transition:0.3s;
 }
 .card:hover{
 transform:translateY(-10px);
+background:rgba(255,255,255,0.1);
 }
 
-/* INFLUENCER SLIDER */
+/* INFLUENCER */
+.influencer-section{
+padding:100px 20px;
+background:linear-gradient(135deg,#120b1f,#1f0f3d);
+}
+
+.influencer-title{
+font-size:50px;
+color:#ffd700;
+}
+
 .influencer-container{
 display:flex;
+justify-content:center;
+flex-wrap:wrap;
 gap:20px;
-overflow-x:auto;
-scroll-behavior:smooth;
-padding:10px;
 }
 
 .influencer-card{
-min-width:180px;
+width:180px;
 height:320px;
-background:#000;
 border-radius:15px;
 overflow:hidden;
-transition:0.4s;
 }
 
 .influencer-card img{
@@ -140,21 +125,10 @@ height:100%;
 object-fit:cover;
 }
 
-.influencer-card:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #ff00ff;
-}
-
-.brand-tag{
-background:white;
-color:black;
-padding:5px;
-font-weight:600;
-}
-
 /* CONTACT */
 .contact{
 background:#08101f;
+padding:50px;
 }
 
 .whatsapp{
@@ -167,43 +141,17 @@ padding:15px;
 border-radius:50%;
 }
 
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.loader-circle{
-width:50px;
-height:50px;
-border:5px solid #00ffd5;
-border-top:5px solid transparent;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-0%{transform:rotate(0);}
-100%{transform:rotate(360deg);}
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#aaa;
 }
 </style>
+
 </head>
 
 <body>
-
-<!-- LOADER -->
-<div id="loader">
-<div class="loader-circle"></div>
-</div>
-
-<!-- PARTICLES -->
-<div id="particles-js"></div>
 
 <header>
 <h2>AdAvenueX</h2>
@@ -215,76 +163,135 @@ animation:spin 1s linear infinite;
 </nav>
 </header>
 
-<section class="hero" id="home" data-aos="fade-up">
+<!-- HERO -->
+<section class="hero" id="home">
+
 <div class="welcome">Welcome 👋</div>
-<p class="intro">Welcome to AdAvenueX — where brands grow faster.</p>
+
 <h1>Scale Your Brand 🚀</h1>
+<p>We help brands grow with powerful influencers & help creators land high-paying deals.</p>
+
 <a href="https://wa.me/916387688790" class="btn">Get Started</a>
+
 </section>
 
+<!-- INFLUENCERS -->
 <section class="influencer-section">
+
 <h2 class="influencer-title">INFLUENCER MARKETING</h2>
 
-<div class="influencer-container" id="slider">
+<div class="influencer-container">
 
-<div class="influencer-card"><img src="img1.jpg"><div class="brand-tag">Upstox</div></div>
-<div class="influencer-card"><img src="img2.jpg"><div class="brand-tag">Mamaearth</div></div>
-<div class="influencer-card"><img src="img3.jpg"><div class="brand-tag">MX TakaTak</div></div>
-<div class="influencer-card"><img src="img4.jpg"><div class="brand-tag">Helios</div></div>
-<div class="influencer-card"><img src="img5.jpg"><div class="brand-tag">Limelight</div></div>
-<div class="influencer-card"><img src="img6.jpg"><div class="brand-tag">Touch925</div></div>
+<div class="influencer-card">
+<img src="img1.jpg">
+</div>
 
+<div class="influencer-card">
+<img src="img2.jpg">
+</div>
+
+<div class="influencer-card">
+<img src="img3.jpg">
+</div>
+
+<div class="influencer-card">
+<img src="img4.jpg">
+</div>
+
+<div class="influencer-card">
+<img src="img5.jpg">
+</div>
+
+<div class="influencer-card">
+<img src="img6.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About AdAvenueX</h2>
+
+<div class="card">
+<h3>👤 Manager</h3>
+<p>Mohit</p>
+</div>
+
+<div class="card">
+<h3>📈 Mission</h3>
+<p>Connect brands with top creators</p>
+</div>
+
+<div class="card">
+<h3>🔥 Vision</h3>
+<p>Build India's top influencer network</p>
 </div>
 </section>
 
-<section id="about" data-aos="fade-up">
-<h2>About AdAvenueX</h2>
-
-<div class="card"><h3>👤 Manager</h3><p>Mohit</p></div>
-<div class="card"><h3>📈 Mission</h3><p>Connect brands</p></div>
-<div class="card"><h3>🔥 Vision</h3><p>Top network</p></div>
-</section>
-
-<section id="services" data-aos="fade-up">
+<!-- SERVICES -->
+<section id="services">
 <h2>Our Services</h2>
 
-<div class="card"><h3>Brand Promotion</h3></div>
-<div class="card"><h3>Creator Deals</h3></div>
-<div class="card"><h3>Campaign Strategy</h3></div>
+<div class="card">
+<h3>🚀 Brand Promotion</h3>
+<p>
+We help brands grow by promoting them through top influencers. 
+Our strategy focuses on reaching the right audience to increase visibility, engagement, and sales.
+</p>
+</div>
+
+<div class="card">
+<h3>🤝 Creator Deals</h3>
+<p>
+We connect creators with high-paying brand collaborations. 
+We manage negotiations and execution so creators can focus on content.
+</p>
+</div>
+
+<div class="card">
+<h3>📊 Campaign Strategy</h3>
+<p>
+We create data-driven influencer campaigns that maximize ROI. 
+Our strategies are designed for real growth and measurable results.
+</p>
+</div>
+
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
-<h2>Contact</h2>
-<a href="https://wa.me/916387688790" class="btn">WhatsApp</a>
+<h2>Contact Us</h2>
+
+<p><i class="fas fa-phone"></i> +91 6387688790</p>
+
+<p>
+<i class="fab fa-instagram"></i> 
+<a href="https://instagram.com/adavenuex" target="_blank" style="color:#00ffd5;">
+@adavenuex
+</a>
+</p>
+
+<div style="margin-top:20px;">
+<a href="https://wa.me/916387688790" class="btn">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+<a href="https://instagram.com/adavenuex" class="btn" style="background:#E1306C;">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+</div>
+
 </section>
 
-<a href="https://wa.me/916387688790" class="whatsapp">💬</a>
+<a href="https://wa.me/916387688790" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-<footer>© 2026 AdAvenueX</footer>
-
-<!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init();
-
-// loader
-window.onload = () => {
-document.getElementById("loader").style.display = "none";
-};
-
-// particles
-particlesJS("particles-js", {
-particles:{number:{value:80},size:{value:3},move:{speed:2}}
-});
-
-// auto slider
-let slider = document.getElementById("slider");
-setInterval(()=>{
-slider.scrollLeft += 200;
-},2000);
-</script>
+<footer>
+© 2026 AdAvenueX | All Rights Reserved
+</footer>
 
 </body>
 </html>
