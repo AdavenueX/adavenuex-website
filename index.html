@@ -14,18 +14,6 @@ font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b0f1a,#0f1f3d);
 color:white;
 overflow-x:hidden;
-cursor:none;
-}
-
-/* CURSOR */
-.cursor{
-width:20px;height:20px;
-border:2px solid #00ffd5;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:999;
 }
 
 /* NAVBAR */
@@ -77,35 +65,61 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* INFLUENCER */
+/* INFLUENCER SECTION */
 .influencer-section{
 padding:100px 20px;
 background:linear-gradient(135deg,#120b1f,#1f0f3d);
 }
 
+.influencer-title{
+font-size:50px;
+font-weight:700;
+color:#ffd700;
+margin-bottom:50px;
+text-align:center;
+}
+
 .influencer-container{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
 gap:20px;
 }
 
 .influencer-card{
-width:180px;height:320px;
-overflow:hidden;
+width:180px;
+height:320px;
+background:#000;
 border-radius:15px;
-transition:0.3s;
+overflow:hidden;
+position:relative;
+transition:0.4s;
 }
-.influencer-card:hover{
-transform:scale(1.1);
-}
+
 .influencer-card img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-/* 🔥 BRANDS */
+.influencer-card:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px #ff00ff;
+}
+
+.brand-tag{
+position:absolute;
+bottom:0;
+width:100%;
+background:white;
+color:black;
+padding:5px;
+font-size:14px;
+font-weight:600;
+text-align:center;
+}
+
+/* BRANDS */
 .brands{
 padding:80px 0;
 background:#000;
@@ -115,12 +129,11 @@ overflow:hidden;
 .slider{
 display:flex;
 gap:60px;
-width:max-content;
-animation:scroll 25s linear infinite;
+animation:scroll 20s linear infinite;
 }
 
 .slider img{
-width:140px;
+width:120px;
 filter:grayscale(100%);
 opacity:0.7;
 transition:0.3s;
@@ -128,7 +141,7 @@ transition:0.3s;
 .slider img:hover{
 filter:grayscale(0);
 opacity:1;
-transform:scale(1.2);
+transform:scale(1.1);
 }
 
 @keyframes scroll{
@@ -139,7 +152,7 @@ transform:scale(1.2);
 /* CONTACT */
 .contact{
 background:#08101f;
-padding:60px;
+padding:50px;
 text-align:center;
 }
 
@@ -151,7 +164,8 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-font-size:20px;
+color:white;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -164,8 +178,6 @@ color:#aaa;
 </head>
 
 <body>
-
-<div class="cursor" id="cursor"></div>
 
 <header>
 <h2>AdAvenueX</h2>
@@ -189,26 +201,55 @@ color:#aaa;
 
 <!-- INFLUENCER -->
 <section class="influencer-section">
+
+<h2 class="influencer-title">INFLUENCER MARKETING</h2>
+
 <div class="influencer-container">
 
-<img class="influencer-card" src="https://picsum.photos/200/300?1">
-<img class="influencer-card" src="https://picsum.photos/200/300?2">
-<img class="influencer-card" src="https://picsum.photos/200/300?3">
-<img class="influencer-card" src="https://picsum.photos/200/300?4">
-<img class="influencer-card" src="https://picsum.photos/200/300?5">
-<img class="influencer-card" src="https://picsum.photos/200/300?6">
+<div class="influencer-card">
+<img src="img1.jpg">
+<div class="brand-tag">Upstox</div>
+</div>
+
+<div class="influencer-card">
+<img src="img2.jpg">
+<div class="brand-tag">Mamaearth</div>
+</div>
+
+<div class="influencer-card">
+<img src="img3.jpg">
+<div class="brand-tag">MX TakaTak</div>
+</div>
+
+<div class="influencer-card">
+<img src="img4.jpg">
+<div class="brand-tag">Helios</div>
+</div>
+
+<div class="influencer-card">
+<img src="img5.jpg">
+<div class="brand-tag">Limelight</div>
+</div>
+
+<div class="influencer-card">
+<img src="img6.jpg">
+<div class="brand-tag">Touch925</div>
+</div>
 
 </div>
 </section>
 
-<!-- 🔥 BRANDS -->
+<!-- BRANDS -->
 <section class="brands">
 <div class="slider">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Flipkart_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Boat_Logo.png">
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Puma_logo.svg">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Flipkart_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Boat_Logo.png">
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Puma_logo.svg">
 
@@ -230,20 +271,7 @@ color:#aaa;
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 particlesJS("particles-js", {
-particles:{
-number:{value:80},
-size:{value:3},
-move:{speed:2}
-}
-});
-</script>
-
-<!-- CURSOR -->
-<script>
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.top=e.clientY+"px";
-cursor.style.left=e.clientX+"px";
+particles:{number:{value:80},size:{value:3},move:{speed:2}}
 });
 </script>
 
