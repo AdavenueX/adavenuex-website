@@ -1,152 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AdavenueX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdavenueX</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #000);
+  color: white;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+/* Navbar */
+nav {
+  padding: 20px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffc3;
+}
 
-    body {
-      background: #0f0f0f;
-      color: white;
-    }
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
 
-    header {
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.hero h1 {
+  font-size: 50px;
+}
 
-    header h2 {
-      color: #00ffcc;
-    }
+.hero p {
+  color: #aaa;
+  margin: 20px 0;
+}
 
-    .hero {
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
+/* Buttons */
+.btn {
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: black;
+  background: #00ffc3;
+  transition: 0.3s;
+}
 
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
+.btn:hover {
+  transform: scale(1.1);
+}
 
-    .hero p {
-      color: #aaa;
-      margin-bottom: 30px;
-    }
+/* Sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
 
-    .btn {
-      padding: 12px 25px;
-      background: #00ffcc;
-      color: black;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-    .btn:hover {
-      transform: scale(1.1);
-      background: #00ccaa;
-    }
+.card {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #222;
+  border-radius: 10px;
+  display: inline-block;
+  width: 200px;
+  transition: 0.3s;
+}
 
-    .section {
-      padding: 60px 50px;
-      text-align: center;
-    }
+.card:hover {
+  transform: scale(1.05);
+  background: #111;
+}
 
-    .cards {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+</style>
 
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 15px;
-      width: 250px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      margin-top: 50px;
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
-    <h2>AdavenueX</h2>
-  </header>
+<nav>AdavenueX</nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>We Scale Influencers & Brands 🚀</h1>
-    <p>Grow faster with top influencer marketing strategies</p>
-    <button class="btn">Get Started</button>
-  </div>
+<!-- Hero Section -->
+<div class="hero">
+  <h1>Scale Your Brand with Influencer Marketing 🚀</h1>
+  <p>We connect brands with high-performing creators to drive growth and revenue.</p>
 
-  <!-- SERVICES -->
-  <div class="section">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Influencer Marketing</h3>
-        <p>Connect with top creators</p>
-      </div>
-      <div class="card">
-        <h3>Brand Deals</h3>
-        <p>High-paying collaborations</p>
-      </div>
-      <div class="card">
-        <h3>Growth Strategy</h3>
-        <p>Scale your online presence</p>
-      </div>
-    </div>
-  </div>
+  <a class="btn" href="https://wa.me/916387688790" target="_blank">Get Started</a>
+  <a class="btn" href="https://wa.me/916387688790" target="_blank">Contact Us</a>
+</div>
 
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>About Us</h2>
-    <p>AdavenueX helps brands and influencers grow with powerful marketing strategies.</p>
-  </div>
+<!-- Services -->
+<div class="section">
+  <h2>Our Services</h2>
+  <div class="card">Influencer Campaigns</div>
+  <div class="card">Creator Management</div>
+  <div class="card">Brand Deals</div>
+  <div class="card">Social Growth</div>
+</div>
 
-  <!-- CONTACT -->
-  <div class="section">
-    <h2>Contact Us</h2>
-    <button class="btn">WhatsApp Us</button>
-  </div>
+<!-- Why Us -->
+<div class="section">
+  <h2>Why Choose Us</h2>
+  <div class="card">✔ Proven Results</div>
+  <div class="card">✔ Top Influencers</div>
+  <div class="card">✔ ROI Focused</div>
+  <div class="card">✔ Fast Growth</div>
+</div>
 
-  <footer>
-    <p>© 2026 AdavenueX. All rights reserved.</p>
-  </footer>
+<!-- CTA -->
+<div class="section">
+  <h2>Ready to Grow Your Brand?</h2>
+  <a class="btn" href="https://wa.me/916387688790" target="_blank">Start Now</a>
+</div>
+
+<footer>
+  © 2026 AdavenueX. All Rights Reserved.
+</footer>
 
 </body>
 </html>
