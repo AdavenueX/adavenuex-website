@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,78 +9,154 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
+*{
   margin:0;
-  font-family:Poppins;
-  background:#0b0f1a;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background: linear-gradient(135deg,#000000,#0a2540);
   color:white;
 }
 
-/* HEADER */
+/* NAVBAR */
 header{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:20px 50px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
 }
-.logo{
-  font-size:22px;
-  font-weight:600;
-  color:#00ffd5;
+
+header img{
+  width:120px;
 }
+
 nav a{
-  margin-left:20px;
-  color:white;
+  margin:0 15px;
   text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00ffd5;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:100px 20px;
+  padding:120px 20px;
 }
+
 .hero h1{
-  font-size:48px;
+  font-size:42px;
+  margin-bottom:15px;
 }
+
+.hero p{
+  color:#bbb;
+  margin-bottom:25px;
+}
+
 .btn{
   background:#00ffd5;
+  color:black;
   padding:12px 25px;
   border-radius:25px;
-  color:black;
   text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* ABOUT */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+section h2{
+  margin-bottom:20px;
+}
+
+section p{
+  max-width:700px;
+  margin:auto;
+  color:#bbb;
 }
 
 /* SERVICES */
 .services{
   display:flex;
   justify-content:center;
-  gap:30px;
-  padding:60px 20px;
-}
-.card{
-  background:#111827;
-  padding:20px;
-  border-radius:10px;
-  width:250px;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-/* STATS */
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:50px;
+.card{
+  background:#111827;
+  padding:25px;
+  border-radius:15px;
+  width:260px;
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #00ffd5;
 }
 
 /* CTA */
 .cta{
-  text-align:center;
-  padding:60px;
+  background:#00ffd5;
+  color:black;
+  padding:60px 20px;
+}
+
+.cta .btn{
+  background:black;
+  color:white;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:20px;
+  color:#aaa;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
 }
 </style>
 </head>
@@ -87,44 +164,56 @@ footer{
 <body>
 
 <header>
-  <div class="logo">AdAvenueX</div>
+  <img src="logo.png">
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="collaborations.html">Collaborations</a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section id="home" class="hero">
   <h1>We Scale Influencers & Brands 🚀</h1>
-  <p>Grow faster with powerful influencer marketing</p>
+  <p>Grow faster with top influencer marketing strategies</p>
   <a class="btn" href="https://wa.me/916387688790">Get Started</a>
 </section>
 
-<section class="services">
-  <div class="card">
-    <h3>Influencer Marketing</h3>
-    <p>We connect brands with top creators</p>
-  </div>
-  <div class="card">
-    <h3>Brand Growth</h3>
-    <p>Scale your reach and engagement</p>
-  </div>
-  <div class="card">
-    <h3>Campaign Strategy</h3>
-    <p>Data-driven campaigns for results</p>
-  </div>
+<!-- ABOUT -->
+<section>
+  <h2>About AdAvenueX</h2>
+  <p>
+    AdAvenueX is a results-driven influencer marketing agency helping brands grow with powerful creator collaborations.
+    We connect brands with high-performing influencers to deliver real engagement, real reach, and real results.
+  </p>
 </section>
 
-<section class="stats">
-  <div>500+ Campaigns</div>
-  <div>2M+ Reach</div>
-  <div>100+ Creators</div>
+<!-- SERVICES -->
+<section id="services" class="services">
+
+  <div class="card">
+    <h3>For Brands 🚀</h3>
+    <p>We find trusted influencers for your niche to boost your brand growth and sales.</p>
+  </div>
+
+  <div class="card">
+    <h3>For Creators 🎯</h3>
+    <p>We connect creators with premium brands for consistent collaborations.</p>
+  </div>
+
+  <div class="card">
+    <h3>Smart Matching 🤝</h3>
+    <p>Perfect brand-creator matching using niche, audience & engagement data.</p>
+  </div>
+
 </section>
 
-<section class="cta">
-  <h2>Ready to Grow?</h2>
-  <a class="btn" href="https://wa.me/916387688790">Contact Now</a>
+<!-- CONTACT -->
+<section id="contact" class="cta">
+  <h2>Ready to Grow? 🚀</h2>
+  <p>Let’s build something powerful together</p>
+  <br>
+  <a class="btn" href="https://wa.me/916387688790">Chat on WhatsApp</a>
 </section>
 
 <footer>
@@ -132,5 +221,21 @@ footer{
   <p>© 2026 AdAvenueX</p>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/916387688790">💬</a>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
+```
