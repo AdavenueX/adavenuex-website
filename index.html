@@ -3,130 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdavenueX</title>
+<title>AdAvenueX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #000);
-  color: white;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-/* Navbar */
-nav {
-  padding: 20px 50px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #00ffc3;
+body{
+  background: linear-gradient(135deg,#000000,#0a2540);
+  color:white;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 120px 20px;
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
 }
 
-.hero h1 {
-  font-size: 50px;
+header img{
+  width:120px;
 }
 
-.hero p {
-  color: #aaa;
-  margin: 20px 0;
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
 }
 
-/* Buttons */
-.btn {
-  padding: 12px 25px;
-  margin: 10px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: black;
-  background: #00ffc3;
-  transition: 0.3s;
+section{
+  padding:100px 20px;
+  text-align:center;
 }
 
-.btn:hover {
-  transform: scale(1.1);
+/* HERO */
+.hero h1{
+  font-size:48px;
 }
 
-/* Sections */
-.section {
-  padding: 80px 20px;
-  text-align: center;
+.hero p{
+  margin-top:15px;
+  color:#aaa;
 }
 
-.section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 25px;
+  background:#00ffcc;
+  color:black;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
 
-.card {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #222;
-  border-radius: 10px;
-  display: inline-block;
-  width: 200px;
-  transition: 0.3s;
+.btn:hover{
+  transform:scale(1.05);
 }
 
-.card:hover {
-  transform: scale(1.05);
-  background: #111;
+/* CARDS */
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #777;
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:15px;
+  width:250px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.stats div{
+  font-size:24px;
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  max-width:600px;
+  margin:auto;
+  color:#ccc;
+}
+
+/* FOOTER */
+footer{
+  padding:50px;
+  background:#000;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<nav>AdavenueX</nav>
+<header>
+  <img src="logo.png" alt="logo">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-<!-- Hero Section -->
-<div class="hero">
-  <h1>Scale Your Brand with Influencer Marketing 🚀</h1>
-  <p>We connect brands with high-performing creators to drive growth and revenue.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>We Scale Influencers & Brands 🚀</h1>
+  <p>Grow faster with top influencer marketing strategies</p>
+  <a class="btn" href="https://wa.me/916387688790">Get Started</a>
+</section>
 
-  <a class="btn" href="https://wa.me/916387688790" target="_blank">Get Started</a>
-  <a class="btn" href="https://wa.me/916387688790" target="_blank">Contact Us</a>
-</div>
+<!-- ABOUT -->
+<section>
+  <h2>About AdAvenueX</h2>
+  <p style="max-width:700px;margin:auto;margin-top:20px;color:#bbb;">
+    AdAvenueX is a results-driven influencer marketing agency helping brands grow with powerful creator collaborations.
+    We connect brands with high-performing influencers to deliver real engagement, real reach, and real results.
+  </p>
+</section>
+<!-- ABOUT -->
 
-<!-- Services -->
-<div class="section">
+<!-- SERVICES -->
+<section>
   <h2>Our Services</h2>
-  <div class="card">Influencer Campaigns</div>
-  <div class="card">Creator Management</div>
-  <div class="card">Brand Deals</div>
-  <div class="card">Social Growth</div>
-</div>
+  <div class="cards">
+    <div class="card">Influencer Marketing</div>
+    <div class="card">Brand Promotion</div>
+    <div class="card">Campaign Management</div>
+    <div class="card">Content Strategy</div>
+  </div>
+</section>
 
-<!-- Why Us -->
-<div class="section">
+<!-- WHY US -->
+<section>
   <h2>Why Choose Us</h2>
-  <div class="card">✔ Proven Results</div>
-  <div class="card">✔ Top Influencers</div>
-  <div class="card">✔ ROI Focused</div>
-  <div class="card">✔ Fast Growth</div>
-</div>
+  <p style="margin-top:20px;color:#bbb;">
+    ✔ Proven influencer network <br>
+    ✔ High ROI campaigns <br>
+    ✔ Fast execution <br>
+    ✔ Dedicated support
+  </p>
+</section>
+
+<!-- STATS -->
+<section>
+  <h2>Our Impact</h2>
+  <div class="stats">
+    <div>500+ Campaigns</div>
+    <div>2M+ Reach</div>
+    <div>100+ Creators</div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+  <h2>Client Feedback</h2>
+  <p class="testimonial">
+    "AdAvenueX helped us scale our brand massively. Highly recommended!"
+  </p>
+</section>
 
 <!-- CTA -->
-<div class="section">
-  <h2>Ready to Grow Your Brand?</h2>
-  <a class="btn" href="https://wa.me/916387688790" target="_blank">Start Now</a>
-</div>
+<section>
+  <h2>Ready to Grow?</h2>
+  <a class="btn" href="https://wa.me/916387688790">Contact on WhatsApp</a>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 AdavenueX. All Rights Reserved.
+  <p>📞 6387688790</p>
+  <p>AdAvenueX © 2026</p>
 </footer>
+
+<!-- FLOATING BUTTON -->
+<a class="whatsapp" href="https://wa.me/916387688790">💬</a>
 
 </body>
 </html>
