@@ -8,122 +8,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
 body{
-  background: linear-gradient(135deg,#000000,#0a2540);
+  margin:0;
+  font-family:Poppins;
+  background:#0b0f1a;
   color:white;
 }
 
+/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:20px 50px;
 }
-
-header img{
-  width:120px;
+.logo{
+  font-size:22px;
+  font-weight:600;
+  color:#00ffd5;
 }
-
 nav a{
-  color:white;
   margin-left:20px;
+  color:white;
   text-decoration:none;
-}
-
-section{
-  padding:100px 20px;
-  text-align:center;
 }
 
 /* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px;
+}
 .hero h1{
   font-size:48px;
 }
-
-.hero p{
-  margin-top:15px;
-  color:#aaa;
-}
-
 .btn{
-  display:inline-block;
-  margin-top:25px;
+  background:#00ffd5;
   padding:12px 25px;
-  background:#00ffcc;
-  color:black;
   border-radius:25px;
+  color:black;
   text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-}
-
-/* CARDS */
-.cards{
+/* SERVICES */
+.services{
   display:flex;
   justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
+  gap:30px;
+  padding:60px 20px;
 }
-
 .card{
-  background:#111;
+  background:#111827;
   padding:20px;
-  border-radius:15px;
+  border-radius:10px;
   width:250px;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
 }
 
 /* STATS */
 .stats{
   display:flex;
   justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
+  gap:50px;
+  padding:50px;
 }
 
-.stats div{
-  font-size:24px;
-}
-
-/* TESTIMONIAL */
-.testimonial{
-  max-width:600px;
-  margin:auto;
-  color:#ccc;
+/* CTA */
+.cta{
+  text-align:center;
+  padding:60px;
 }
 
 /* FOOTER */
 footer{
-  padding:50px;
-  background:#000;
-}
-
-/* FLOATING WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:20px;
+  text-align:center;
+  padding:20px;
 }
 </style>
 </head>
@@ -131,85 +87,50 @@ footer{
 <body>
 
 <header>
-  <img src="logo.png" alt="logo">
+  <div class="logo">AdAvenueX</div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="collaborations.html">Collaborations</a>
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h1>We Scale Influencers & Brands 🚀</h1>
-  <p>Grow faster with top influencer marketing strategies</p>
+  <p>Grow faster with powerful influencer marketing</p>
   <a class="btn" href="https://wa.me/916387688790">Get Started</a>
 </section>
 
-<!-- ABOUT -->
-<section>
-  <h2>About AdAvenueX</h2>
-  <p style="max-width:700px;margin:auto;margin-top:20px;color:#bbb;">
-    AdAvenueX is a results-driven influencer marketing agency helping brands grow with powerful creator collaborations.
-    We connect brands with high-performing influencers to deliver real engagement, real reach, and real results.
-  </p>
-</section>
-<!-- ABOUT -->
-
-<!-- SERVICES -->
-<section>
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">Influencer Marketing</div>
-    <div class="card">Brand Promotion</div>
-    <div class="card">Campaign Management</div>
-    <div class="card">Content Strategy</div>
+<section class="services">
+  <div class="card">
+    <h3>Influencer Marketing</h3>
+    <p>We connect brands with top creators</p>
+  </div>
+  <div class="card">
+    <h3>Brand Growth</h3>
+    <p>Scale your reach and engagement</p>
+  </div>
+  <div class="card">
+    <h3>Campaign Strategy</h3>
+    <p>Data-driven campaigns for results</p>
   </div>
 </section>
 
-<!-- WHY US -->
-<section>
-  <h2>Why Choose Us</h2>
-  <p style="margin-top:20px;color:#bbb;">
-    ✔ Proven influencer network <br>
-    ✔ High ROI campaigns <br>
-    ✔ Fast execution <br>
-    ✔ Dedicated support
-  </p>
+<section class="stats">
+  <div>500+ Campaigns</div>
+  <div>2M+ Reach</div>
+  <div>100+ Creators</div>
 </section>
 
-<!-- STATS -->
-<section>
-  <h2>Our Impact</h2>
-  <div class="stats">
-    <div>500+ Campaigns</div>
-    <div>2M+ Reach</div>
-    <div>100+ Creators</div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section>
-  <h2>Client Feedback</h2>
-  <p class="testimonial">
-    "AdAvenueX helped us scale our brand massively. Highly recommended!"
-  </p>
-</section>
-
-<!-- CTA -->
-<section>
+<section class="cta">
   <h2>Ready to Grow?</h2>
-  <a class="btn" href="https://wa.me/916387688790">Contact on WhatsApp</a>
+  <a class="btn" href="https://wa.me/916387688790">Contact Now</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>📞 6387688790</p>
-  <p>AdAvenueX © 2026</p>
+  <p>© 2026 AdAvenueX</p>
 </footer>
-
-<!-- FLOATING BUTTON -->
-<a class="whatsapp" href="https://wa.me/916387688790">💬</a>
 
 </body>
 </html>
