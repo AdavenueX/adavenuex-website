@@ -7,9 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 body{
 margin:0;
@@ -54,10 +51,23 @@ text-align:center;
 .welcome{
 font-size:70px;
 font-weight:700;
+margin-bottom:10px;
+}
+
+.intro{
+color:#aaa;
+max-width:700px;
+margin-bottom:20px;
 }
 
 .hero h1{
 font-size:50px;
+margin-top:10px;
+}
+
+.hero p{
+color:#bbb;
+max-width:600px;
 }
 
 .btn{
@@ -86,7 +96,7 @@ padding:25px;
 margin:15px;
 border-radius:15px;
 display:inline-block;
-width:280px;
+width:250px;
 transition:0.3s;
 }
 .card:hover{
@@ -94,7 +104,7 @@ transform:translateY(-10px);
 background:rgba(255,255,255,0.1);
 }
 
-/* INFLUENCER */
+/* INFLUENCER SECTION */
 .influencer-section{
 padding:100px 20px;
 background:linear-gradient(135deg,#120b1f,#1f0f3d);
@@ -102,7 +112,9 @@ background:linear-gradient(135deg,#120b1f,#1f0f3d);
 
 .influencer-title{
 font-size:50px;
+font-weight:700;
 color:#ffd700;
+margin-bottom:50px;
 }
 
 .influencer-container{
@@ -115,14 +127,40 @@ gap:20px;
 .influencer-card{
 width:180px;
 height:320px;
+background:#000;
 border-radius:15px;
 overflow:hidden;
+position:relative;
+transition:0.4s;
 }
 
 .influencer-card img{
 width:100%;
 height:100%;
 object-fit:cover;
+}
+
+.influencer-card:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px #ff00ff;
+}
+
+/* NEW INFO OVERLAY */
+.influencer-info{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+color:white;
+padding:10px;
+font-size:13px;
+text-align:left;
+}
+
+.influencer-info strong{
+display:block;
+font-size:14px;
+color:#00ffd5;
 }
 
 /* CONTACT */
@@ -139,6 +177,8 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
+text-decoration:none;
+font-size:20px;
 }
 
 /* FOOTER */
@@ -165,49 +205,73 @@ color:#aaa;
 
 <!-- HERO -->
 <section class="hero" id="home">
-
 <div class="welcome">Welcome 👋</div>
+
+<p class="intro">
+Welcome to AdAvenueX — where brands grow faster with powerful influencer marketing strategies and creators land premium deals.
+</p>
 
 <h1>Scale Your Brand 🚀</h1>
 <p>We help brands grow with powerful influencers & help creators land high-paying deals.</p>
 
 <a href="https://wa.me/916387688790" class="btn">Get Started</a>
-
 </section>
 
-<!-- INFLUENCERS -->
+<!-- INFLUENCER -->
 <section class="influencer-section">
-
 <h2 class="influencer-title">INFLUENCER MARKETING</h2>
 
 <div class="influencer-container">
 
 <div class="influencer-card">
 <img src="img1.jpg">
+<div class="influencer-info">
+<strong>@anaya.luxe</strong>
+“My brand LuxeGlow saw massive growth after working with AdAvenueX.”
+</div>
 </div>
 
 <div class="influencer-card">
 <img src="img2.jpg">
+<div class="influencer-info">
+<strong>@riya.creates</strong>
+“I landed premium paid collaborations through AdAvenueX.”
+</div>
 </div>
 
 <div class="influencer-card">
 <img src="img3.jpg">
+<div class="influencer-info">
+<strong>@urbanvibe.brand</strong>
+“Our brand scaled quickly with their influencer campaigns.”
+</div>
 </div>
 
 <div class="influencer-card">
 <img src="img4.jpg">
+<div class="influencer-info">
+<strong>@sneha.influencer</strong>
+“I got my best sponsorship deals via AdAvenueX.”
+</div>
 </div>
 
 <div class="influencer-card">
 <img src="img5.jpg">
+<div class="influencer-info">
+<strong>@glowfit.official</strong>
+“Sales and visibility boosted with AdAvenueX campaigns.”
+</div>
 </div>
 
 <div class="influencer-card">
 <img src="img6.jpg">
+<div class="influencer-info">
+<strong>@kavya.style</strong>
+“High-quality brand deals started after joining AdAvenueX.”
+</div>
 </div>
 
 </div>
-
 </section>
 
 <!-- ABOUT -->
@@ -235,27 +299,18 @@ color:#aaa;
 <h2>Our Services</h2>
 
 <div class="card">
-<h3>🚀 Brand Promotion</h3>
-<p>
-We help brands grow by promoting them through top influencers. 
-Our strategy focuses on reaching the right audience to increase visibility, engagement, and sales.
-</p>
+<h3>Brand Promotion</h3>
+<p>We scale brands using targeted influencer campaigns that drive real engagement and sales.</p>
 </div>
 
 <div class="card">
-<h3>🤝 Creator Deals</h3>
-<p>
-We connect creators with high-paying brand collaborations. 
-We manage negotiations and execution so creators can focus on content.
-</p>
+<h3>Creator Deals</h3>
+<p>We connect creators with high-paying brands for long-term collaborations.</p>
 </div>
 
 <div class="card">
-<h3>📊 Campaign Strategy</h3>
-<p>
-We create data-driven influencer campaigns that maximize ROI. 
-Our strategies are designed for real growth and measurable results.
-</p>
+<h3>Campaign Strategy</h3>
+<p>We plan ROI-focused campaigns that maximize reach, conversions, and brand growth.</p>
 </div>
 
 </section>
@@ -263,31 +318,12 @@ Our strategies are designed for real growth and measurable results.
 <!-- CONTACT -->
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
-
-<p><i class="fas fa-phone"></i> +91 6387688790</p>
-
-<p>
-<i class="fab fa-instagram"></i> 
-<a href="https://instagram.com/adavenuex" target="_blank" style="color:#00ffd5;">
-@adavenuex
-</a>
-</p>
-
-<div style="margin-top:20px;">
-<a href="https://wa.me/916387688790" class="btn">
-<i class="fab fa-whatsapp"></i> WhatsApp
-</a>
-
-<a href="https://instagram.com/adavenuex" class="btn" style="background:#E1306C;">
-<i class="fab fa-instagram"></i> Instagram
-</a>
-</div>
-
+<p>📞 +91 6387688790</p>
+<p>📸 Instagram: @adavenuex</p>
+<a href="https://wa.me/916387688790" class="btn">Chat on WhatsApp</a>
 </section>
 
-<a href="https://wa.me/916387688790" class="whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/916387688790" class="whatsapp">💬</a>
 
 <footer>
 © 2026 AdAvenueX | All Rights Reserved
