@@ -7,25 +7,13 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- PARTICLES SCRIPT -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
 <style>
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#0b0f1a,#0f1f3d);
 color:white;
-}
-
-/* PARTICLES BACKGROUND */
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-1;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -38,18 +26,16 @@ background:rgba(0,0,0,0.3);
 backdrop-filter:blur(10px);
 position:sticky;
 top:0;
+z-index:10;
 }
 
 nav a{
 margin:0 15px;
 color:white;
 text-decoration:none;
-font-weight:500;
 transition:0.3s;
 }
-nav a:hover{
-color:#00ffd5;
-}
+nav a:hover{ color:#00ffd5; }
 
 /* HERO */
 .hero{
@@ -59,29 +45,21 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
 }
 
-.welcome{
-font-size:70px;
-font-weight:700;
-margin-bottom:10px;
+#particles-js{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
 }
 
-.intro{
-color:#aaa;
-max-width:700px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:50px;
-margin-top:10px;
-}
-
-.hero p{
-color:#bbb;
-max-width:600px;
-}
+.welcome{font-size:70px;font-weight:700;}
+.hero h1{font-size:50px;}
+.hero p{color:#bbb;max-width:600px;}
 
 .btn{
 margin-top:20px;
@@ -90,18 +68,12 @@ background:#00ffd5;
 color:black;
 border-radius:30px;
 text-decoration:none;
-font-weight:600;
 transition:0.3s;
 }
-.btn:hover{
-transform:scale(1.1);
-}
+.btn:hover{transform:scale(1.1);}
 
 /* SECTION */
-section{
-padding:80px 20px;
-text-align:center;
-}
+section{padding:80px 20px;text-align:center;}
 
 .card{
 background:rgba(255,255,255,0.05);
@@ -110,24 +82,12 @@ margin:15px;
 border-radius:15px;
 display:inline-block;
 width:250px;
-transition:0.3s;
-}
-.card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.1);
 }
 
-/* INFLUENCER SECTION */
+/* INFLUENCER */
 .influencer-section{
 padding:100px 20px;
 background:linear-gradient(135deg,#120b1f,#1f0f3d);
-}
-
-.influencer-title{
-font-size:50px;
-font-weight:700;
-color:#ffd700;
-margin-bottom:50px;
 }
 
 .influencer-container{
@@ -138,65 +98,39 @@ gap:20px;
 }
 
 .influencer-card{
-width:180px;
-height:320px;
-background:#000;
+width:180px;height:320px;
 border-radius:15px;
 overflow:hidden;
-position:relative;
-transition:0.4s;
 }
 
 .influencer-card img{
-width:100%;
-height:100%;
-object-fit:cover;
+width:100%;height:100%;object-fit:cover;
 }
 
-.influencer-card:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #ff00ff;
-}
-
-.brand-tag{
-position:absolute;
-bottom:0;
-width:100%;
-background:white;
-color:black;
-padding:5px;
-font-size:14px;
-font-weight:600;
-}
-
-/* BRANDS SECTION */
+/* 🔥 BRANDS */
 .brands{
-overflow:hidden;
-white-space:nowrap;
-padding:40px 0;
-background:#000;
+padding:80px 20px;
+background:#0a0a0a;
 }
 
-.brands-track{
-display:inline-block;
-animation:scroll 20s linear infinite;
+.brand-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:40px;
+max-width:1000px;
+margin:auto;
 }
 
-.brands img{
-height:60px;
-margin:0 40px;
+.brand-grid img{
+width:120px;
 filter:grayscale(100%);
-transition:0.3s;
+opacity:0.7;
+transition:0.4s;
 }
-
-.brands img:hover{
+.brand-grid img:hover{
 filter:grayscale(0%);
+opacity:1;
 transform:scale(1.1);
-}
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
 }
 
 /* CONTACT */
@@ -205,16 +139,15 @@ background:#08101f;
 padding:50px;
 }
 
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 padding:15px;
 border-radius:50%;
-text-decoration:none;
-font-size:20px;
+color:white;
 }
 
 /* FOOTER */
@@ -224,13 +157,9 @@ padding:20px;
 color:#aaa;
 }
 </style>
-
 </head>
 
 <body>
-
-<!-- PARTICLES -->
-<div id="particles-js"></div>
 
 <header>
 <h2>AdAvenueX</h2>
@@ -244,94 +173,71 @@ color:#aaa;
 
 <!-- HERO -->
 <section class="hero" id="home">
+<div id="particles-js"></div>
 
 <div class="welcome">Welcome 👋</div>
-
-<p class="intro">
-Welcome to AdAvenueX — where brands grow faster with powerful influencer marketing strategies and creators land premium deals.
-</p>
-
 <h1>Scale Your Brand 🚀</h1>
-<p>We help brands grow with powerful influencers & help creators land high-paying deals.</p>
-
+<p>We help brands grow with powerful influencers & creators.</p>
 <a href="https://wa.me/916387688790" class="btn">Get Started</a>
-
 </section>
 
-<!-- INFLUENCER SHOWCASE -->
+<!-- INFLUENCERS -->
 <section class="influencer-section">
-
-<h2 class="influencer-title">INFLUENCER MARKETING</h2>
-
 <div class="influencer-container">
 
-<div class="influencer-card"><img src="img1.jpg"><div class="brand-tag">Upstox</div></div>
-<div class="influencer-card"><img src="img2.jpg"><div class="brand-tag">Mamaearth</div></div>
-<div class="influencer-card"><img src="img3.jpg"><div class="brand-tag">MX TakaTak</div></div>
-<div class="influencer-card"><img src="img4.jpg"><div class="brand-tag">Helios</div></div>
-<div class="influencer-card"><img src="img5.jpg"><div class="brand-tag">Limelight</div></div>
-<div class="influencer-card"><img src="img6.jpg"><div class="brand-tag">Touch925</div></div>
+<div class="influencer-card"><img src="img1.jpg"></div>
+<div class="influencer-card"><img src="img2.jpg"></div>
+<div class="influencer-card"><img src="img3.jpg"></div>
+<div class="influencer-card"><img src="img4.jpg"></div>
+<div class="influencer-card"><img src="img5.jpg"></div>
+<div class="influencer-card"><img src="img6.jpg"></div>
 
+</div>
+</section>
+
+<!-- 🔥 BRANDS -->
+<section class="brands">
+<h2>Driving <span style="color:#ffb400;">Business Impact</span></h2>
+
+<div class="brand-grid">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Flipkart_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Tata_Cliq_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Boat_Logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Puma_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Snapdeal_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Sebamed_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/ITC_Limited_Logo.svg">
 </div>
 
 </section>
-
-<!-- 🔥 NEW BRANDS SECTION -->
-<div class="brands">
-<div class="brands-track">
-
-<img src="img1.jpg">
-<img src="img2.jpg">
-<img src="img3.jpg">
-<img src="img4.jpg">
-<img src="img5.jpg">
-<img src="img6.jpg">
-
-<img src="img1.jpg">
-<img src="img2.jpg">
-<img src="img3.jpg">
-<img src="img4.jpg">
-<img src="img5.jpg">
-<img src="img6.jpg">
-
-</div>
-</div>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>About AdAvenueX</h2>
-<p>AdAvenueX is a premium influencer marketing agency focused on delivering real growth.</p>
-
-<div class="card"><h3>👤 Manager</h3><p>Mohit</p></div>
-<div class="card"><h3>📈 Mission</h3><p>Connect brands with top creators</p></div>
-<div class="card"><h3>🔥 Vision</h3><p>Build India's top influencer network</p></div>
+<h2>About</h2>
+<p>AdAvenueX is a premium influencer marketing agency.</p>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Our Services</h2>
-
-<div class="card"><h3>Brand Promotion</h3><p>Grow your brand with influencers</p></div>
-<div class="card"><h3>Creator Deals</h3><p>Get high-paying collaborations</p></div>
-<div class="card"><h3>Campaign Strategy</h3><p>ROI focused marketing plans</p></div>
-
+<h2>Services</h2>
+<p>Brand promotion, creator deals, campaigns.</p>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
 <p>📞 +91 6387688790</p>
-<p>📸 Instagram: @adavenuex</p>
 <a href="https://wa.me/916387688790" class="btn">Chat on WhatsApp</a>
 </section>
 
 <a href="https://wa.me/916387688790" class="whatsapp">💬</a>
 
-<footer>
-© 2026 AdAvenueX | All Rights Reserved
-</footer>
+<footer>© 2026 AdAvenueX</footer>
 
-<!-- PARTICLES CONFIG -->
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script>
 particlesJS("particles-js", {
 particles: {
